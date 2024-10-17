@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EjemploBucle : MonoBehaviour
 {
     public int[] arrayNumeros;
-
+    public GameObject media;
+    public GameObject maxima;
+    public GameObject minima;
     // Start is called before the first frame update
     void Start()
     {
-        float min = 10.0f;
-        float max = 0.0f;
+        float min = arrayNumeros[0];
+        float max = arrayNumeros[0];
         int sumaDeNotas = 0;
         for (int i = 0; i < arrayNumeros.Length; i++)
         {
@@ -30,5 +33,9 @@ public class EjemploBucle : MonoBehaviour
         }
         int notaMedia = sumaDeNotas / arrayNumeros.Length;
         Debug.Log("Nota Media: " + notaMedia);
+    }
+    void Update()
+    {
+    
     }
 }
