@@ -8,7 +8,10 @@ public class ButtonShop : MonoBehaviour
     [SerializeField]
     Wallet myWallet;
     //[SerializeField]
+    //TextMeshProUGUI ;
     TextMeshProUGUI textButton;
+    [SerializeField]
+    string[] posiblesNombres;
     [SerializeField]
     string nameItem = "Objeto";
     [SerializeField]
@@ -17,13 +20,14 @@ public class ButtonShop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        nameItem = posiblesNombres[Random.Range(0,posiblesNombres.Length)];
         textButton = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         priceItem = Random.Range(25f, 350f);
-        textButton.text = priceItem.ToString() + " $";
+        textButton.text = nameItem + "\n" + priceItem.ToString() + " $";
     }
 
-    void ClickEnBotonDeTienda()
+    public void ClickEnBotonDeTienda()
     {
-        myWallet.RestarSaldo(priceItem);
+        myWallet.InformarCompra(nameItem, priceItem);
     }
 }
