@@ -34,8 +34,4 @@ public class EjemploBucle : MonoBehaviour
         int notaMedia = sumaDeNotas / arrayNumeros.Length;
         Debug.Log("Nota Media: " + notaMedia);
     }
-    void Update()
-    {
-    
-    }
 }

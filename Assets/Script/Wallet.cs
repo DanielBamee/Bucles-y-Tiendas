@@ -6,6 +6,7 @@ using TMPro;
     
 public class Wallet : MonoBehaviour
 {
+    public static Wallet instance;
     float saldo;
     [SerializeField]
     TextMeshProUGUI labelSaldo;
@@ -22,6 +23,17 @@ public class Wallet : MonoBehaviour
     {
         saldo = Random.Range(450f, 950);
         labelSaldo.text = saldo.ToString("000.00") + "$";
+    }
+    public void Awake()
+    {
+        if (Wallet.instance == null)
+        {
+            Wallet.instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
 
     public void InformarCompra(string nameItem, float precio)

@@ -5,8 +5,6 @@ using TMPro;
 
 public class ButtonShop : MonoBehaviour
 {
-    [SerializeField]
-    Wallet myWallet;
     //[SerializeField]
     //TextMeshProUGUI ;
     TextMeshProUGUI textButton;
@@ -28,6 +26,6 @@ public class ButtonShop : MonoBehaviour
 
     public void ClickEnBotonDeTienda()
     {
-        myWallet.InformarCompra(nameItem, priceItem);
+        Wallet.instance.InformarCompra(nameItem, priceItem);
     }
 }
